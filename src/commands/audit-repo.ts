@@ -4,7 +4,8 @@ import { existsSync, writeFileSync } from 'fs';
 import { stringify } from 'csv-stringify';
 import { PostHog } from 'posthog-node';
 
-import { actionRunner, checkForUpdates, logRateLimitInformation } from '../utils';
+//import { actionRunner, checkForUpdates, logRateLimitInformation } from '../utils';
+import { actionRunner, checkForUpdates } from '../utils';
 import VERSION from '../version';
 import { createLogger } from '../logger';
 import { createOctokit } from '../octokit';
