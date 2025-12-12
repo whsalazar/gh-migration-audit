@@ -42,17 +42,18 @@ export const checkForUpdates = async (
 
 export const logRateLimitInformation = async (
   logger: Logger,
-  octokit: Octokit,
+  //octokit: Octokit,
 ): Promise<boolean> => {
   try {
     //const restRateLimitResponse = await octokit.rest.rateLimit.get();
     //const restResetsAt = new Date(restRateLimitResponse.data.rate.reset * 1_000);
 
-    //logger.info(
+    logger.info(
+      'No Rate Limit Check'
       //`GitHub REST rate limit: ${restRateLimitResponse.data.rate.used}/${
         //restRateLimitResponse.data.rate.limit
       //} used - resets at ${restResetsAt.toISOString()}`,
-    //);
+    );
 
    //const graphqlRateLimitResponse = (await octokit.graphql(
     //  'query { rateLimit { limit remaining resetAt } }',
@@ -61,9 +62,10 @@ export const logRateLimitInformation = async (
      // graphqlRateLimitResponse.rateLimit.limit -
      // graphqlRateLimitResponse.rateLimit.remaining;
 
-    //logger.info(
+    logger.info(
+      'No Rate Limit Check'
      // `GitHub GraphQL rate limit: ${graphqlUsedRateLimit}/${graphqlRateLimitResponse.rateLimit.limit} used - resets at ${graphqlRateLimitResponse.rateLimit.resetAt}`,
-    //);
+    );
 
     return true;
   } catch (e) {
