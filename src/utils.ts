@@ -1,4 +1,3 @@
-import { type Octokit } from 'octokit';
 import { RequestError } from '@octokit/request-error';
 import semver from 'semver';
 
