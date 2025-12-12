@@ -179,13 +179,13 @@ command
 
       const octokit = createOctokit(authConfig, baseUrl, proxyUrl, logger);
 
-      const shouldCheckRateLimitAgain = await logRateLimitInformation(logger, octokit);
+      //const shouldCheckRateLimitAgain = await logRateLimitInformation(logger, octokit);
 
-      if (shouldCheckRateLimitAgain) {
-        setInterval(() => {
-          void logRateLimitInformation(logger, octokit);
-        }, 30_000);
-      }
+      i//f (shouldCheckRateLimitAgain) {
+      // setInterval(() => {
+      //    void logRateLimitInformation(logger, octokit);
+      // }, 30_000);
+      //}
 
       const nameWithOwners = await readNameWithOwnersFromInputFile(inputPath);
 
