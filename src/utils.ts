@@ -42,28 +42,31 @@ export const checkForUpdates = async (
 
 export const logRateLimitInformation = async (
   logger: Logger,
+  //octokit: Octokit,
 ): Promise<boolean> => {
   try {
     //const restRateLimitResponse = await octokit.rest.rateLimit.get();
     //const restResetsAt = new Date(restRateLimitResponse.data.rate.reset * 1_000);
+    //const restRateLimitResponse = await octokit.rest.rateLimit.get();
+    //const restResetsAt = new Date(restRateLimitResponse.data.rate.reset * 1_000);
 
     logger.info(
-      'No Rate Limit Check'
+      'No Rate Limit Info Available',
       //`GitHub REST rate limit: ${restRateLimitResponse.data.rate.used}/${
-        //restRateLimitResponse.data.rate.limit
+       // restRateLimitResponse.data.rate.limit
       //} used - resets at ${restResetsAt.toISOString()}`,
     );
 
-   //const graphqlRateLimitResponse = (await octokit.graphql(
+    //const graphqlRateLimitResponse = (await octokit.graphql(
     //  'query { rateLimit { limit remaining resetAt } }',
     //)) as { rateLimit: { limit: number; remaining: number; resetAt: string } };
-    //const graphqlUsedRateLimit =
-     // graphqlRateLimitResponse.rateLimit.limit -
-     // graphqlRateLimitResponse.rateLimit.remaining;
+    //onst graphqlUsedRateLimit =
+    // graphqlRateLimitResponse.rateLimit.limit -
+    // graphqlRateLimitResponse.rateLimit.remaining;
 
     logger.info(
-      'No Rate Limit Check'
-     // `GitHub GraphQL rate limit: ${graphqlUsedRateLimit}/${graphqlRateLimitResponse.rateLimit.limit} used - resets at ${graphqlRateLimitResponse.rateLimit.resetAt}`,
+      'No GraphQL Rate Limit Info Available',
+      //`GitHub GraphQL rate limit: ${graphqlUsedRateLimit}/${graphqlRateLimitResponse.rateLimit.limit} used - resets at ${graphqlRateLimitResponse.rateLimit.resetAt}`,
     );
 
     return true;
