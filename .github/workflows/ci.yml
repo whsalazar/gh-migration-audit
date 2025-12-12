@@ -91,7 +91,7 @@ jobs:
           path: bin/gh-migration-audit-windows-amd64.exe
   create_release:
     name: Create release
-    if: startsWith(github.ref, 'refs/tags/')
+    # if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     needs: ['package','test_and_lint']
 
