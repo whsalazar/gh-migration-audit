@@ -7,7 +7,6 @@ import { PostHog } from 'posthog-node';
 import {
   actionRunner,
   checkForUpdates,
-  //logRateLimitInformation,
   pluralize,
 } from '../utils';
 import VERSION from '../version';

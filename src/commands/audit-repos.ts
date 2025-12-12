@@ -8,7 +8,6 @@ import crypto from 'crypto';
 import {
   actionRunner,
   checkForUpdates,
-  //logRateLimitInformation,
   pluralize,
 } from '../utils';
 import VERSION from '../version';
