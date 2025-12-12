@@ -53,7 +53,7 @@ export const logRateLimitInformation = async (
     logger.info(
       'No Rate Limit Info Available',
       //`GitHub REST rate limit: ${restRateLimitResponse.data.rate.used}/${
-       // restRateLimitResponse.data.rate.limit
+      // restRateLimitResponse.data.rate.limit
       //} used - resets at ${restResetsAt.toISOString()}`,
     );
 
