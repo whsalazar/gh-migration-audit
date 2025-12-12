@@ -42,7 +42,6 @@ export const checkForUpdates = async (
 
 export const logRateLimitInformation = async (
   logger: Logger,
-  //octokit: Octokit,
 ): Promise<boolean> => {
   try {
     //const restRateLimitResponse = await octokit.rest.rateLimit.get();
