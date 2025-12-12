@@ -4,7 +4,7 @@ import { existsSync, writeFileSync } from 'fs';
 import { stringify } from 'csv-stringify';
 import { PostHog } from 'posthog-node';
 
-import { actionRunner, checkForUpdates } from '../utils';
+import { actionRunner, checkForUpdates, logRateLimitInformation } from '../utils';
 import VERSION from '../version';
 import { createLogger } from '../logger';
 import { createOctokit } from '../octokit';
@@ -138,6 +138,14 @@ command
       }
 
       const octokit = createOctokit(authConfig, baseUrl, proxyUrl, logger);
+
+      const shouldCheckRateLimitAgain = await logRateLimitInformation(logger, octokit);
+
+      if (shouldCheckRateLimitAgain) {
+        setInterval(() => {
+          void logRateLimitInformation(logger, octokit);
+        }, 30_000);
+      }
 
       const { isGitHubEnterpriseServer, gitHubEnterpriseServerVersion } =
         await getGitHubProductInformation(octokit);
